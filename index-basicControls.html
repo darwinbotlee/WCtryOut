@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Brownbag</title>
+        <script src="js/Mycomponent-Button.js"></script>
+        <script src="js/Mycomponent-Input.js"></script>
+        <script src="js/Mycomponent-dateInput.js"></script>
+		<script src="js/Mycomponent-CheckBox.js"></script>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />        
+        
+    </head>
+    <body style="height: 1000px">
+        <div class="container">
+            <h1>Web components Basic Controls</h1>
+            <br />
+            <br />
+
+            <h2>Label</h2>
+            <mycomponents-label>Label Example</mycomponents-label>
+            <br/>
+            <br />
+
+            <h2>Button</h2>
+            <my-button></my-button>
+            <br />
+            <br />
+
+            <h2>Button Addeb by Js</h2>
+            <div id="myButtonContainer"></div>
+            <br />
+            <br />
+
+            <h2>Input</h2>
+            <my-input validator-type="A" placeholder="Full Name"></my-input>
+            <br />
+            <br />
+
+            <h2>Input Date</h2>
+            <div class="row">
+                <div class='col-sm-6'>
+                    <div class="form-group">
+                        <my-dateinput validator-type="A" placeholder="Full Name"></my-dateinput>
+                    </div>
+                </div>
+            </div>
+			<h2>CheckBox</h2>
+			<style>
+				mycomponent-checkbox {
+				vertical-align: middle;
+				}
+				mycomponent-label {
+				vertical-align: middle;
+				display: inline-block;
+				font-weight: bold;
+				font-family: sans-serif;
+				font-size: 20px;
+				margin-left: 8px;
+				}
+			</style>
+			<mycomponent-checkbox id="join-checkbox"></mycomponent-checkbox>
+			<mycomponent-label for="join-checkbox">Check Me!</mycomponent-label>
+						
+        </div>
+            <script>
+                let newbutton = document.createElement('my-button');                
+                document.getElementById("myButtonContainer").appendChild(newbutton);
+                newbutton.firstChild.innerHTML = "Test Button";                
+
+                /*let button = document.createElement('button', {is: 'my-button'});
+                button.textContent = 'Fancy button!';
+                //button.disabled = true;
+                document.body.appendChild(button);
+                //Si no, usa el operador new:*/
+
+                /*let button1 = new MyButton();
+                button1.textContent = 'Fancy button!';
+                button1.disabled = true;*/
+            </script>
+    </body>
+</html>
